@@ -1,0 +1,15 @@
+.container > .contentArea > .contentAreaBackground {
+  fill: #fafafa;
+}
+
+.container > .contentArea .xAxis text {
+  font-size: 10px;
+}
+
+.container > .contentArea .line path {
+  fill: transparent;
+  stroke: grey;
+  stroke-width: 1;
+}
+
+
