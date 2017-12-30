@@ -1,13 +1,11 @@
 # bitcoin-charts-redux
-Bitcoin fantasy
-
-bitcoin rate graph
+Bitcoin fantasy rate graph
 
 This project was bootstrapped with Create React App.
 
-Simple app using React, Redux, and bitcoin API https://api.blockchain.info/charts
+Simple app using React, Redux, D3, and bitcoin API https://api.blockchain.info/charts
 
-This is a test task project.
+This is a test task project for learn D3 library
 
 Setup
 

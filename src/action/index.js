@@ -6,11 +6,7 @@ import {LOADING, LOADING_RATE, LOADED} from "../reducer/loading";
 export const loading = (payload) => ({type: LOADING, payload})
 export const loaded = (payload) => ({type: LOADED, payload})
 
-export function requestStart() {
-  return {
-    type: REQUEST + START,
-  }
-}
+export const requestStart = () => ({ type: REQUEST + START })
 
 export const  requestFailed = (error) =>  ({
   type: REQUEST + FAILED,
@@ -32,11 +28,10 @@ export const updateMap = (payload) =>  ({
     payload
 })
 
-export function fetchApi(link , mode) {
-  return function (dispatch) {
+export const fetchApi = (link, mode) => {
+  return (dispatch) => {
     dispatch(loading(LOADING_RATE));
     dispatch(requestStart());
-    console.log(link)
     return fetch(link)
       .then(response => {
         if (response.status >= 400) {
@@ -47,7 +42,7 @@ export function fetchApi(link , mode) {
       .then(json => (
         dispatch(receiveQuery(json, RECEIVE + mode))
         ))
-      .then(dispatch(loaded(LOADING_RATE)))
+      .then(_ => dispatch(loaded(LOADING_RATE)))
       .catch(error => {
         dispatch(requestFailed(error.toString()))
       })
